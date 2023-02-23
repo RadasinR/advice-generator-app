@@ -1,0 +1,164 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Light Cyan: hsl(193, 38%, 86%)
+- Neon Green: hsl(150, 100%, 66%)
+
+### Neutral
+
+- Grayish Blue: 
+- Dark Grayish Blue: 
+- Dark Blue: 
+
+## Typography
+
+### Body Copy
+
+- Font size (quote): 28px
+
+### Font
+
+- Family: [Manrope](https://fonts.google.com/specimen/Manrope)
+- Weights: 800 */
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+/* END FONT */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* END RESET */
+
+/* CUSTOM PROPERTIES */
+:root {
+    /* Colors */
+    /* primary */
+    --LIGHT-CYAN: hsl(193, 38%, 86%);
+    --NEON-GREEN: hsl(150, 100%, 66%);
+    /* neutral */
+    --GRAYISH-BLUE: hsl(217, 19%, 38%);
+    --DARK-GRAYISH-BLUE: hsl(217, 19%, 24%);
+    --DARK-BLUE: hsl(218, 23%, 16%);
+    /* End Colors */
+
+    /* Typography */
+    --FF: 'Manrope', sans-serif;
+    --FSQ: 2.8rem;
+    --FS-SMALL: 1.4rem;
+    --REGULAR: 800;
+
+    /* Button */
+    --btn-size: 6.4rem;
+    /* GAP */
+    --gap: 4rem;
+}
+
+/* END CUSTOM PROPERTIES */
+
+/* GENERAL STYLES */
+body {
+    color: var(--LIGHT-CYAN);
+    font-family: var(--FF);
+    font-weight: var(--REGULAR);
+}
+
+main {
+    align-items: center;
+    background-color: var(--DARK-BLUE);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* END GENERAL STYLES */
+
+/* BLOCKS */
+.advice {
+
+    background-color: var(--DARK-GRAYISH-BLUE);
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: var(--gap);
+    padding: clamp(2rem, 10%, 6rem) 2%;
+    position: relative;
+    width: clamp(32.5rem, 90%, 50rem);
+}
+
+.btn {
+    background-color: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* END BLOCKS */
+
+/* ELEMENTS */
+.advice__title {
+    font-size: var(--FS-SMALL);
+    text-transform: uppercase;
+    font-weight: var(--REGULAR);
+}
+
+.advice__text {
+    font-size: var(--FSQ);
+    text-align: center;
+
+}
+
+.advice__sep {
+    margin-bottom: calc(clamp(2rem, 10%, 6rem) - var(--gap) + var(--btn-size) / 2);
+}
+
+/* END ELEMENTS */
+
+/* MODIFIERS */
+.accent--green {
+    color: var(--NEON-GREEN);
+}
+
+.btn--dice {
+    background-image: url("/images/icon-dice.svg");
+    height: var(--btn-size);
+    width: var(--btn-size);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 50%;
+    background-color: var(--NEON-GREEN);
+}
+
+.btn--dice:is(:hover, :active) {
+    box-shadow: 0px 0px 2.5rem var(--NEON-GREEN);
+}
+
+.btn--pos_advice {
+    position: absolute;
+    bottom: calc(var(--btn-size) / -2);
+    left: calc(50% - var(--btn-size) / 2);
+}
+
+/* END MODIFIERS */
