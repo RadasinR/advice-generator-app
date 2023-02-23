@@ -59,7 +59,7 @@ I this chaleng i learnd how to make http request with javascript.
 ```
 ```css
 .advice__sep {
-    margin-bottom: calc(clamp(2rem, 10%, 6rem) - var(--gap) + var(--btn-size) / 2);
+    margin-bottom: calc(var(--gap) - (clamp(2rem, 10%, 6rem) - (var(--btn-size) / 2)));
 }
 .btn--pos_advice {
     position: absolute;
